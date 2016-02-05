@@ -1,0 +1,15 @@
+Please follow these steps to use this driver to log data with a Velodyne VLP-16
+
+  1) Install Pcap library by "sudo apt-get install libpcap-dev" in a terminal
+
+  2) Copy driver folder to ROS workspace and compile
+
+     Note: you might need to change access permission of the "velodyne_driver_16/velodyne_pointcloud/cfg/VelodyneConfig.cfg" file, by "chmod 777 VelodyneConfig.cfg" in a terminal
+
+  3) Change "save_data_dir" in the "velodyne_driver_16/velodyne_launch/launch/VLP-16.launch" file to where you want the Velodyne data to be saved
+
+  4) Set computer IP to 192.168.3.100, connect Velodyne ethernet cable and power on Velodyne
+
+  5) In a terminal, use "roslaunch velodyne_launch VLP-16.launch" to launch the driver and log data
+
+  6) You should see raw point clouds showing in RVIZ and a "velodyneData.bag" file saved in the directory specified in 2)
